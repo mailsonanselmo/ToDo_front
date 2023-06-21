@@ -1,0 +1,18 @@
+.container{
+    height: 85%;
+    margin: auto;
+}
+
+.content{
+    width: 100%;
+}
+
+.new-todo{
+    width: 100%;
+    margin-top: 3rem;
+}
+
+p{
+    text-align: end;
+    font-weight: 600;
+}
