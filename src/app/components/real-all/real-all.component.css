@@ -1,10 +1,17 @@
 .container{
-    height: 85%;
+    width: 85%;
     margin: auto;
+    
 }
 
 .content{
     width: 100%;
+    padding: 0;
+}
+
+mat-card{
+    margin-top: .8rem;
+    padding: .2rem;
 }
 
 .new-todo{
@@ -15,4 +22,14 @@
 p{
     text-align: end;
     font-weight: 600;
+    color: rgb(114, 111, blue);
+    margin-bottom:0 ;
+    padding: 0.5rem;
+}
+.actions{
+    text-align: end;
+}
+
+.actions button{
+    margin: .5rem;
 }
