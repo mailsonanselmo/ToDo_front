@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/todo';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-real-all',
@@ -8,26 +9,21 @@ import { Todo } from 'src/app/models/todo';
 })
 export class RealAllComponent implements OnInit{
 
-  list: Todo[] = [
-    {
-      titulo: "Teste1",
-      dataFinalizar: new Date,
-      finalizar: false
-    },
-    {
-      titulo: "Teste2",
-      dataFinalizar: new Date,
-      finalizar: true
-    }
-  ]
+  list: Todo[] = [  ];
 
 
 
 
-  constructor(){ }
+  constructor(private service: TodoService){ }
 
   ngOnInit(): void {
-    
+    this.findAll();
+  }
+
+  findAll(): void{
+    this.service.findAll().subscribe((resposta) => {
+      this.list = resposta;
+    })
   }
   
 
