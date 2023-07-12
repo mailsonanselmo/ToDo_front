@@ -9,10 +9,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class RealAllComponent implements OnInit{
 
-  list: Todo[] = [  ];
-
-
-
+  list: Todo[] = [];
 
   constructor(private service: TodoService){ }
 

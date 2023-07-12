@@ -13,7 +13,7 @@ export class TodoService {
 
   constructor(private http: HttpClient) { }
 
-  findAll():  Observable <Todo[]>{
+  findAll(): Observable<Todo[]>{
     return this.http.get<Todo[]>(this.baseUrl);
   }
   
