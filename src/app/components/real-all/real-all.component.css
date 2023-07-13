@@ -4,6 +4,19 @@
     
 }
 
+.bagde{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bagde button{
+    margin: auto;
+    width: 100%;
+
+}
+
 .content{
     width: 100%;
     padding: 0;

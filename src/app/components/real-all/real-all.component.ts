@@ -9,7 +9,10 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class RealAllComponent implements OnInit{
 
+  closed = 0;
+
   list: Todo[] = [];
+  listFinalizados: Todo[] = [];
 
   constructor(private service: TodoService){ }
 
@@ -19,9 +22,15 @@ export class RealAllComponent implements OnInit{
 
   findAll(): void{
     this.service.findAll().subscribe((resposta) => {
-      this.list = resposta;
+      resposta.forEach(todo => {
+        if(todo.finalizar){
+          this.listFinalizados.push(todo);
+        }else{
+          this.list.push(todo);
+        }
+      })
+      this.closed = this.listFinalizados.length;
     })
   }
-  
 
 }
