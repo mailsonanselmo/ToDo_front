@@ -2,16 +2,19 @@
 
 <div class="container">
 
-  <div class="bagde">
-      <button mat-stroked-button color="primary" matBadge="{{closed}}">Tasks Finalizadas</button>
+  <div class="badge">
+      <button mat-stroked-button color="primary" matBadge="{{ closed }}">Tasks Finalizadas</button>
+  </div>
+  <div class="badge">
+      <button (click)="finalizados()" mat-stroked-button color="primary" >Finalizados</button>
   </div>
 
-  <button class="new-todo mat-elevation-z8" mat-stroked-button color="primary">New</button>
+  <button (click)="criar()" class="new-todo mat-elevation-z8" mat-stroked-button color="primary">Criar</button>
 
     <div class="content" *ngFor="let item of list">
         <mat-card class="mat-elevation-z8">
 
-            <p>Data finalizar: {{item.dataFinalizar}}</p>
+            <p>Data finalização: {{item.dataFinalizar}}</p>
 
             <mat-card-header>
               <mat-card-title>{{item.titulo}}</mat-card-title>
@@ -20,7 +23,7 @@
 
             <div class="actions">
 
-              <button mat-mini-fab color="primary">
+              <button (click)="finalizar(item)" mat-mini-fab color="primary">
                   <mat-icon>done</mat-icon>
               </button>
               
@@ -28,7 +31,7 @@
                   <mat-icon>edit</mat-icon>
               </button>
 
-              <button mat-mini-fab color="warn">
+              <button (click)="delete(item.id)" mat-mini-fab color="warn">
                   <mat-icon>delete</mat-icon>
               </button>
 
